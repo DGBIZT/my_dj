@@ -10,21 +10,24 @@
     Значение 1.0 означает, что страница будет отображаться в реальном размере (без увеличения или уменьшения)
 -->
     <title>Контактная форма</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
 </head>
 <body>
-    <h1>Свяжитесь с нами</h1>
-    <form method="post" action="">
-        {% csrf_token %}
-        <div>
-            <label for="name">Ваше имя</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-            <label for="message">Ваше сообщение</label>
-            <textarea type="text" id="message" rows="5" name="message" required></textarea>
-        </div>
-        <button type="submit">Отправить</button>
-    </form>
-
+    <div class="container mt-5">
+        <h1>Свяжитесь с нами</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Ваше сообщение</label>
+                <textarea class="form-control" type="text" id="message" rows="5" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+<script type="text/javascript" src="/static/js/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
