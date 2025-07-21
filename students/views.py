@@ -10,6 +10,8 @@ def show_data(request):
         return render(request, 'app/show_data.html')
 
 def submit_data(request):
+    # request.GET
+    # request.POST
     if request.method == 'POST':
         return  HttpResponse("Данные отправлены")
 
