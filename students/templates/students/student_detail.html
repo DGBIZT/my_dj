@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--
+    Мета-тег <meta name="viewport"> — это важный элемент HTML, который определяет,
+    как веб-страница будет масштабироваться и отображаться на различных устройствах.
+    width=device-width — устанавливает ширину области просмотра равной ширине экрана устройства. телефон, планшет, десктоп
+    initial-scale=1.0 — задает начальный масштаб страницы:
+    Значение 1.0 означает, что страница будет отображаться в реальном размере (без увеличения или уменьшения)
+-->
+    <title>student_detail</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
+
+
+</head>
+<body>
+    <h1>Информация о студенте</h1>
+    <p>Имя: {{ student.first_name }}</p>
+    <p>Фамилия: {{ student.last_name }}</p>
+    <p>Курс: {{ student.get_year_display }}</p>
+    <p>Фотографии: <img src="{{ student.photo.url }}" alt="{{ student.first_name }} {{ student.last_name }}"></p>
+
+</body>
+</html>
