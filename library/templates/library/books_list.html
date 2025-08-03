@@ -1,33 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    Мета-тег <meta name="viewport"> — это важный элемент HTML, который определяет,
-    как веб-страница будет масштабироваться и отображаться на различных устройствах.
-    width=device-width — устанавливает ширину области просмотра равной ширине экрана устройства. телефон, планшет, десктоп
-    initial-scale=1.0 — задает начальный масштаб страницы:
-    Значение 1.0 означает, что страница будет отображаться в реальном размере (без увеличения или уменьшения)
--->
-    <title>Список книг</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Список книг</h1>
-        <ul class="list-group">
+{% extends 'library/base.html' %}
+
+{% block title %} Список книг {% endblock %}
+
+{% block content %}
+{%  include 'library/header.html'%}
+    <h2>Список книг</h2>
+     <ul class="list-group">
             {% for book in books %}
                 <li class="list-group-item">
                     {{ book.title }} - {{ book.publication_date|date:"d M Y" }} - {{ book.author.first_name }} {{ book.author.last_name }}
                 </li>
-
             {% endfor %}
-        </ul>
+     </ul>
+{% endblock %}
 
-    </div>
 
-    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
-</body>
-</html>
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    {% load static %}#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <!--#}
+{#    Мета-тег <meta name="viewport"> — это важный элемент HTML, который определяет,#}
+{#    как веб-страница будет масштабироваться и отображаться на различных устройствах.#}
+{#    width=device-width — устанавливает ширину области просмотра равной ширине экрана устройства. телефон, планшет, десктоп#}
+{#    initial-scale=1.0 — задает начальный масштаб страницы:#}
+{#    Значение 1.0 означает, что страница будет отображаться в реальном размере (без увеличения или уменьшения)#}
+{#-->#}
+{#    <title>Список книг</title>#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">#}
+{#</head>#}
+{#<body>#}
+{#    <div class="container mt-5">#}
+{#        <h1 class="mb-4">Список книг</h1>#}
+{#        <ul class="list-group">#}
+{#            {% for book in books %}#}
+{#                <li class="list-group-item">#}
+{#                    {{ book.title }} - {{ book.publication_date|date:"d M Y" }} - {{ book.author.first_name }} {{ book.author.last_name }}#}
+{#                </li>#}
+{##}
+{#            {% endfor %}#}
+{#        </ul>#}
+{##}
+{#    </div>#}
+
+{#    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>#}
+{#</body>#}
+{#</html>#}
