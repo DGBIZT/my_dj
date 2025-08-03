@@ -45,8 +45,8 @@ def index(request):
     }
     return render(request, 'students/index.html', context=context)
 
-def student_detail(request):
-    student = Student.objects.get(id=2)
+def student_detail(request, student_id):
+    student = Student.objects.get(id=student_id)
     context = {
         'student': student,
     }
@@ -58,3 +58,23 @@ def student_list(request):
         'students': students,
     }
     return render(request, 'students/student_list.html', context=context)
+def home(request):
+    student = Student.objects.all()
+    context = {
+        'student': student,
+    }
+    return render(request, 'students/home.html', context=context)
+
+def base(request):
+    student = Student.objects.all()
+    context = {
+        'student': student,
+    }
+    return render(request, 'students/base.html', context=context)
+
+def header(request):
+    student = Student.objects.all()
+    context = {
+        'student': student,
+    }
+    return render(request, 'students/header.html', context=context)
