@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информ MyModel</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">{{ mymodel.name }}</h1>
+        <p>{{ mymodel.description }}</p>
+        <p>Создано: {{ mymodel.created_at }}</p>
+        <p>Обновлено: {{ mymodel.updated_at }}</p>
+
+    </div>
+
+    <script type="text/javascript" src="/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

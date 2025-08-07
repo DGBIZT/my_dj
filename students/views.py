@@ -1,25 +1,40 @@
+from django.contrib.messages.api import success
 from django.shortcuts import render
 from django.http import HttpResponse
-from students.models import Student
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
+from django.views.generic import ListView, DeleteView, UpdateView, DetailView
+from students.models import Student, MyModel
 # Create your views here.
 
-# def example_view(request):
-#     return render(request, 'app/example.html')
-#
-# def show_data(request):
-#     if request.method == 'GET':
-#         return render(request, 'app/show_data.html')
-#
-# def submit_data(request):
-#     # request.GET
-#     # request.POST
-#     if request.method == 'POST':
-#         return  HttpResponse("Данные отправлены")
-#
-#
-# def show_item(request, item_id):
-#     return render(request, 'app/item.html', {'item_id': item_id})
-#
+class MyModelCreteView(CreateView):
+    model = MyModel
+    fields = ['name', 'description']
+    template_name = 'students/mymodel_form.html'
+    success_url = reverse_lazy('students:mymodel_list')
+
+
+class MyModelListView(ListView):
+    model = MyModel
+    template_name = 'students/mymodel_list.html'
+    context_object_name = 'mymodels'
+
+class MyModelDetailView(DetailView):
+    model = MyModel
+    TemplateName = 'students/mymodel_detail.html'
+    context_object_name = 'mymodel'
+
+class MyModelUpdateView(UpdateView):
+    model = MyModel
+    fields = ['name', 'description']
+    template_name = 'students/mymodel_form.html'
+    success_url = reverse_lazy('students:mymodel_list')
+
+class MyModelDeleteView(DeleteView):
+    model = MyModel
+    template_name = 'students/mymodel_confirm_delete.html'
+    success_url = reverse_lazy('students:mymodel_list')
+
 
 
 def about(request):
