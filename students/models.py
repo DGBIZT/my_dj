@@ -11,8 +11,6 @@ class MyModel(models.Model):
         return self.name
 
 
-
-
 class Group(models.Model):
     name = models.CharField(max_length=100, verbose_name='Группа')
 
@@ -39,8 +37,10 @@ class Student(models.Model):
 
     first_name = models.CharField(max_length=150, verbose_name='Имя')
     last_name = models.CharField(max_length=150, verbose_name='Фамилия')
+    email = models.EmailField()
     year = models.CharField(max_length=6, choices=YEAR_IN_SCHOOL_CHOICES, default=FIRST_YEAR, verbose_name='Курс')
-    group = models.ForeignKey(Group, related_name='students', on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, related_name='students', on_delete=models.CASCADE),
+    enrollment_date = models.DateField()
     # default=1
 
     def __str__(self):

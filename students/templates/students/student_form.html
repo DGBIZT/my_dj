@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для студента</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {% if object %}
+            <h1 class="mb-4">Форма для редактирования студента</h1>
+        {% else %}
+            <h1 class="mb-4">Форма для добавления студента</h1>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if object %}
+                <button type="submit" class="btn btn-primary">Редактировать</button>
+                <a href="{% url 'students:student_list'%}">Отмена</a>
+            {% else %}
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a href="{% url 'students:student_list'%}">Отмена</a>
+            {% endif %}
+        </form>
+    </div>
+
+    <script type="text/javascript" src="/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
