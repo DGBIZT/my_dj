@@ -12,33 +12,4 @@
     <a href="{% url 'library:book_delete' book.pk %}" class="btn btn-danger">Удалить</a>
     <a href="{% url 'library:books_list' %}" class="btn btn-primary">Вернуться к списку</a>
 
-
 {% endblock %}
-
-
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    {% load static %}#}
-{#    <meta charset="UTF-8">#}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-{#    <!--#}
-{#    Мета-тег <meta name="viewport"> — это важный элемент HTML, который определяет,#}
-{#    как веб-страница будет масштабироваться и отображаться на различных устройствах.#}
-{#    width=device-width — устанавливает ширину области просмотра равной ширине экрана устройства. телефон, планшет, десктоп#}
-{#    initial-scale=1.0 — задает начальный масштаб страницы:#}
-{#    Значение 1.0 означает, что страница будет отображаться в реальном размере (без увеличения или уменьшения)#}
-{#-->#}
-{#    <title>Книга</title>#}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">#}
-{#</head>#}
-{#<body>#}
-{#     <div class="container mt-5">#}
-{#        <h1 class="mb-4">{{ book.title }}</h1>#}
-{#         <p>Автор: {{ book.author.first_name }} {{ book.author.last_name }}</p>#}
-{#         <p>Дата публикации: {{ book.publication_date|date:"j E Y" }}</p>#}
-{#     </div>#}
-{##}
-{#    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>#}
-{#</body>#}
-{#</html>#}
