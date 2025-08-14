@@ -11,6 +11,7 @@
     {% endif %}
     <form method="post">
         {% csrf_token %} <!-- Обязательно для всех POST-форм -->
+        {{ form.non_field_errors }}
         {{ form.as_p }}
         {% if object %}
             <button type="submit" class="btn btn-secondary">Сохранить</button>

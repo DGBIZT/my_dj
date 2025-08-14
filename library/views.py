@@ -12,9 +12,9 @@ class BooksListView(ListView):
     template_name = 'library/books_list.html'
     context_object_name = 'books'
 
-    def get_queryset(self): # отображение книг только после 1900 года
-        queryset = super().get_queryset()
-        return queryset.filter(publication_date__year__gt=1900)
+    # def get_queryset(self): # отображение книг только после 1900 года
+    #     queryset = super().get_queryset()
+    #     return queryset.filter(publication_date__year__gt=1900)
 
 
 class BookCreateView(CreateView):

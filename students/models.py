@@ -40,7 +40,7 @@ class Student(models.Model):
     email = models.EmailField()
     year = models.CharField(max_length=6, choices=YEAR_IN_SCHOOL_CHOICES, default=FIRST_YEAR, verbose_name='Курс')
     group = models.ForeignKey(Group, related_name='students', on_delete=models.CASCADE),
-    enrollment_date = models.DateField()
+    enrollment_date = models.DateField(verbose_name='Дата зачисления')
     # default=1
 
     def __str__(self):
