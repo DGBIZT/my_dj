@@ -1,0 +1,15 @@
+{% extends 'library/base.html' %}
+
+{% block title %} Удаление автора{% endblock %}
+
+{% block content %}
+{%  include 'library/header.html'%}
+    <h2>Удаление автора</h2>
+    <p>Вы действительно хотите удалить "{{ author.first_name }} {{ author.last_name }}"</p>
+    <form method="post">
+        {% csrf_token %} <!-- Обязательно для всех POST-форм -->
+        <button type="submit" class="btn btn-danger">Подтвердить</button>
+        <a href="{% url 'library:authors_list' %}" class="btn btn-primary">Отменить</a>
+    </form>
+
+{% endblock %}
