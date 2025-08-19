@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from dotenv import load_dotenv
 from pathlib import Path
 import os
-from django.conf.global_settings import STATICFILES_DIRS, MEDIA_URL, MEDIA_ROOT
+from django.conf.global_settings import STATICFILES_DIRS, MEDIA_URL, MEDIA_ROOT, AUTH_USER_MODEL
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     'students',
-    'library'
+    'library',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = 'users.CustomUser'
