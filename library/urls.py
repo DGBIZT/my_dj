@@ -1,4 +1,3 @@
-from IPython.core.release import author
 from django.urls import path
 from .views import BooksListView, BookUpdateView, BookCreateView, BookDeleteView, BookDetailView, AuthorCreateView, AuthorListView, AuthorUpdateView, AuthorDeleteView, AuthorDetailView
 
